@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-//Опис функцій
+//РћРїРёСЃ С„СѓРЅРєС†С–Р№
 void print_array( int **A, int **B, int rows, int col);
 void max_min(int **A,int rows,int col);
 void trans_B(int **B,int **T,int rows,int col);
@@ -20,17 +20,17 @@ int main()
     int **Dobutok=NULL;
     int **T=NULL;
 
-    printf("\nEnter the matrix size:");//Задаємо розмір матриці
+    printf("\nEnter the matrix size:");//Р—Р°РґР°С”РјРѕ СЂРѕР·РјС–СЂ РјР°С‚СЂРёС†С–
     printf("\nRows:");
     scanf("%d", &rows);
     printf("\nColumns:");
     scanf("%d", &col);
     system("cls");
 
-    A=(int**) malloc(rows * sizeof(int));//Виділяємо пам'ять
+    A=(int**) malloc(rows * sizeof(int));//Р’РёРґС–Р»СЏС”РјРѕ РїР°Рј'СЏС‚СЊ
      if( A == NULL )
     {
-        printf("Error memory was not allocated");//Якщо пам'ять не виділена, то виводимо про це повідомлення
+        printf("Error memory was not allocated");//РЇРєС‰Рѕ РїР°Рј'СЏС‚СЊ РЅРµ РІРёРґС–Р»РµРЅР°, С‚Рѕ РІРёРІРѕРґРёРјРѕ РїСЂРѕ С†Рµ РїРѕРІС–РґРѕРјР»РµРЅРЅСЏ
         exit(0);
     }
     for(int i=0;i<rows;i++){
@@ -84,7 +84,7 @@ int main()
 
     do{
     printf("Choose a method");
-    printf("\n\n1.Randomly\n2.Manually\n");//Вибираємо метод задання матриці
+    printf("\n\n1.Randomly\n2.Manually\n");//Р’РёР±РёСЂР°С”РјРѕ РјРµС‚РѕРґ Р·Р°РґР°РЅРЅСЏ РјР°С‚СЂРёС†С–
     scanf("%d",&entering_the_matrix);
     }while(entering_the_matrix != 1 && entering_the_matrix != 2);
     system("cls");
@@ -123,7 +123,7 @@ int main()
 
     system("cls");
     print_array(A, B, rows, col);
-//Вибираємо завдання для матриці
+//Р’РёР±РёСЂР°С”РјРѕ Р·Р°РІРґР°РЅРЅСЏ РґР»СЏ РјР°С‚СЂРёС†С–
    do{
     do{
         printf("\n\nSelect a task:\n1.The maximum of the matrix A \n2.Transposed matrix B\n3.Product AxB\n4.Sorted matrix A\n5.The sum of matrices \n6. Exit\n");
@@ -159,7 +159,7 @@ int main()
 }
 }while(Exit == 0);
 
-//Звільнюємо виділену під масиви пам'ять
+//Р—РІС–Р»СЊРЅСЋС”РјРѕ РІРёРґС–Р»РµРЅСѓ РїС–Рґ РјР°СЃРёРІРё РїР°Рј'СЏС‚СЊ
 
     for (int i = 0; i < rows; i++)
     {
@@ -176,7 +176,7 @@ int main()
 }
 
 //===================================================================================================
-// описуємо виведення матриці
+// РѕРїРёСЃСѓС”РјРѕ РІРёРІРµРґРµРЅРЅСЏ РјР°С‚СЂРёС†С–
 void print_array( int **A, int **B, int rows, int col){
 
 printf("Matrix A:\n");
@@ -201,7 +201,7 @@ for (int i=0;i<rows;i++){
 }
 
 //=========================================================================================================
-// описуємо пошук мінімального та максимального значення над головною діагоналлю
+// РѕРїРёСЃСѓС”РјРѕ РїРѕС€СѓРє РјС–РЅС–РјР°Р»СЊРЅРѕРіРѕ С‚Р° РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ Р·РЅР°С‡РµРЅРЅСЏ РЅР°Рґ РіРѕР»РѕРІРЅРѕСЋ РґС–Р°РіРѕРЅР°Р»Р»СЋ
 void max_min ( int ** A, int rows, int col)
 {
    int max_element;
@@ -230,7 +230,7 @@ void max_min ( int ** A, int rows, int col)
 }
 
 //===========================================================================================================
-//описуємо транспонування матриці В
+//РѕРїРёСЃСѓС”РјРѕ С‚СЂР°РЅСЃРїРѕРЅСѓРІР°РЅРЅСЏ РјР°С‚СЂРёС†С– Р’
 void trans_B(int **B,int **T,int rows,int col){
     for (int i=0;i<rows;i++){
         for (int j=0;j<col;j++){
@@ -247,7 +247,7 @@ printf("\nTransposition of B:\n");
 }
 
 //============================================================================================================
-//описуємо добуток матриць
+//РѕРїРёСЃСѓС”РјРѕ РґРѕР±СѓС‚РѕРє РјР°С‚СЂРёС†СЊ
 void dobutok_arrays(int **A,int **B,int **Prod,int rows,int col){
      for(int i=0;i<rows;i++){
             for(int j=0;j<col;j++){
@@ -268,7 +268,7 @@ void dobutok_arrays(int **A,int **B,int **Prod,int rows,int col){
 }
 
 //=============================================================================================================
-//описуємо сортування матриці А методом бульбашки
+//РѕРїРёСЃСѓС”РјРѕ СЃРѕСЂС‚СѓРІР°РЅРЅСЏ РјР°С‚СЂРёС†С– Рђ РјРµС‚РѕРґРѕРј Р±СѓР»СЊР±Р°С€РєРё
 void sort_A(int **A,int rows,int col){//again
 
 int variant;
@@ -328,7 +328,7 @@ scanf("%d",&sort);
 }
 
 //===============================================================================================================
-//описуємо пошук суми матриць
+//РѕРїРёСЃСѓС”РјРѕ РїРѕС€СѓРє СЃСѓРјРё РјР°С‚СЂРёС†СЊ
 void sum_of_arrays(int **A,int **B,int rows,int col){
 
 int sum;
