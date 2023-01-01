@@ -15,9 +15,9 @@ void sum_of_arrays(int **A,int **B,int rows,int col);
 int main()
 {
     int entering_the_matrix,task_selection,rows,col,Exit;
-    int **A = NULL;
+    int **A = NULL;//Щоб відзначити, що цей вказівник ще не містить коректну адресу в пам'яті, такому вказівнику присвоюють константу нульового вказівника
     int **B=NULL;
-    int **Dobutok=NULL;
+    int **Prod=NULL;
     int **T=NULL;
 
     printf("\nEnter the matrix size:");//Задаємо розмір матриці
@@ -48,8 +48,8 @@ int main()
         printf("Error memory was not allocated");
         exit(0);
     }
-    Dobutok=(int**) malloc(col * sizeof(int));
-     if( Dobutok == NULL )
+    Prod=(int**) malloc(col * sizeof(int));
+     if( Prod == NULL )
     {
         printf("Error memory was not allocated");
         exit(0);
@@ -68,8 +68,8 @@ int main()
             printf("Error memory was not allocated");
             exit(0);
         }
-        Dobutok[i]=(int*) malloc(rows* sizeof(int));
-        if(Dobutok[i]==NULL)
+        Prod[i]=(int*) malloc(rows* sizeof(int));
+        if(Prod[i]==NULL)
         {
             printf("Error memory was not allocated");
             exit(0);
@@ -141,7 +141,7 @@ int main()
     break;
 
     case 3:
-       dobutok_arrays(A,B,Dobutok,rows,col);
+       dobutok_arrays(A,B,Prod,rows,col);
     break;
 
     case 4:
